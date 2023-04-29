@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
-pkg install proot -y
+pkg install proot wget -y
 folder=ubuntu-fs
 if [ -d "$folder" ]; then
 	first=1
