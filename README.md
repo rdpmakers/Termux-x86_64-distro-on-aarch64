@@ -1,5 +1,2 @@
-# Termux-UbuntuX86_64
-Resources Provided By
-https://github.com/EXALAB
-
-it like chroot different Architecture Using QEMU No root On Android Armhf/Aarch64
+### Termux-UbuntuX86_64
+A automatic script to install any distro by yourself in Termux, but in different architecture using QEMU.
