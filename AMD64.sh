@@ -15,13 +15,13 @@ C="$(printf '\033[1;36m')"
 #Warning
 echo ${R}"Warning!
 Error may occur during installation.
-Also, the distro speed will be more  lower than proot as it is in QEMU."
+Also, the distro speed will be more lower than proot as it is in QEMU."
 sleep 3
 clear
 
 #requirements
 echo ${G}"Installing requirements"
-pkg install proot wget qemu-system-x86_64 -y
+pkg install proot wget -y
 clear
 termux-setup-storage
 clear
@@ -56,6 +56,7 @@ case `dpkg --print-architecture` in
     *)
             echo ${R}"Unknown architecture"${W}; exit 1 ;;
 esac
+
 #Links
 echo ${G}"Please put in your URL here for downloading rootfs: "${W}
 read URL
