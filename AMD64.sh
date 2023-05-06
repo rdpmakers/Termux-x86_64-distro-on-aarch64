@@ -48,7 +48,7 @@ case `dpkg --print-architecture` in
             echo ${G}"Please download the rootfs file for x86."${W};
 			sleep 1 ;;
 	x86)	
-			echo ${G}"Please download the rootfs file for x86."${w};
+			echo ${G}"Please download the rootfs file for x86."${W};
 			sleep 1 ;;
     x86_64)
             echo ${G}"Please download the rootfs file for amd64."${W};
