@@ -20,7 +20,7 @@ sleep 3
 clear
 
 #requirements
-echo ${G}"Installing requirements"
+echo ${G}"Installing requirements"${W}
 pkg install proot wget -y
 clear
 termux-setup-storage
@@ -45,10 +45,12 @@ case `dpkg --print-architecture` in
 			chmod 777 qemu-x86_64-static;
 			mv qemu-x86_64-static ~/../usr/bin/ ;;
     i*86)
-            echo ${G}"Please download the rootfs file for x86."${W};
-			sleep 1 ;;
+            echo ${G}"Please download the rootfs file for x64."${W};
+            echo ${R}"I am not sure whether it will work for x86 or not";
+    		sleep 1 ;;
 	x86)	
 			echo ${G}"Please download the rootfs file for x86."${W};
+            echo ${R}"I am not sure whether it will work for x86 or not";
 			sleep 1 ;;
     x86_64)
             echo ${G}"Please download the rootfs file for amd64."${W};

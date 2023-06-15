@@ -19,7 +19,7 @@ sleep 3
 clear
 
 #requirements
-echo ${G}"Installing requirements"
+echo ${G}"Installing requirements"${W}
 pkg install proot wget -y
 clear
 termux-setup-storage
@@ -137,10 +137,8 @@ else
 fi
 EOM
 
-echo "fixing shebang of $bin"
 termux-fix-shebang $bin
-echo "making $bin executable"
 chmod +x $bin
-echo "removing image for some space"
 rm -rf $folder/*.tar.*
-echo "You can now launch Debian with the ./${bin} script"
+clear 
+echo ${G}"You can now launch Debian with the ./${bin} script"
