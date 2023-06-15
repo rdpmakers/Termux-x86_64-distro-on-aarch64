@@ -1,8 +1,8 @@
-### Termux-UbuntuX86_64
-A automatic script to install any distro by yourself in Termux, but in different architecture using QEMU.
+## Termux-UbuntuX86_64
+A automatic script to install any distro by yourself in Termux, but in different architecture using QEMU support.
 
 
-## For x86_64 
+### For x86_64 
 ```bash 
 pkg in wget -y 
 wget https://raw.githubusercontent.com/23xvx/Termux-x86_64-distro-on-aarch64/master/AMD64.sh
