@@ -44,14 +44,10 @@ case `dpkg --print-architecture` in
 			wget https://github.com/AllPlatform/Termux-UbuntuX86_64/raw/master/arm/qemu-x86_64-static;
 			chmod 777 qemu-x86_64-static;
 			mv qemu-x86_64-static ~/../usr/bin/ ;;
-    i*86)
+    i*86|x86)
             echo ${G}"Please download the rootfs file for x64."${W};
             echo ${R}"I am not sure whether it will work for x86 or not";
     		sleep 1 ;;
-	x86)	
-			echo ${G}"Please download the rootfs file for x86."${W};
-            echo ${R}"I am not sure whether it will work for x86 or not";
-			sleep 1 ;;
     x86_64)
             echo ${G}"Please download the rootfs file for amd64."${W};
 			sleep 1 ;;
@@ -68,7 +64,7 @@ If you put in 'kali' , everytime you login will be
 'bash kali-x64.sh' "${W}
 read ds_name
 sleep 1
-echo ${Y}"your URl is $URL 
+echo ${Y}"your URL is $URL 
 and your distro name is $ds_name "${W}
 sleep 2
 
