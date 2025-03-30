@@ -27,51 +27,20 @@ termux-setup-storage
 clear
 
 #Notice
-echo ${C}"Make sure you download the rootfs for amd64/x86_64."
-echo ${C}"Your architecture is $ARCHITECTURE ."
-case `dpkg --print-architecture` in
-    aarch64)
-            echo ${G}"Please download the rootfs file for amd64." ;
-			sleep 1
-			echo ${G}"Downloading requirements for QEMU...."${W} ;
-			wget https://github.com/AllPlatform/Termux-UbuntuX86_64/raw/master/arm64/qemu-x86_64-static;
-			chmod 777 qemu-x86_64-static;
-			mv qemu-x86_64-static ~/../usr/bin ;;
-    arm*)
-            echo ${G}"Please download the rootfs file for amd64." ;
-			sleep 1
-			echo ${G}"Downloading requirements for QEMU...."${W} ;
-			wget https://github.com/AllPlatform/Termux-UbuntuX86_64/raw/master/arm/qemu-x86_64-static;
-			chmod 777 qemu-x86_64-static;
-			mv qemu-x86_64-static ~/../usr/bin/ ;;
-    i*86|x86)
-            echo ${G}"Please download the rootfs file for x64."${W};
-            echo ${R}"I am not sure whether it will work for x86 or not";
-    		sleep 1 ;;
-    x86_64)
-            echo ${G}"Please download the rootfs file for amd64."${W};
-			sleep 1 ;;
-    *)
-            echo ${R}"Unknown architecture"${W}; exit 1 ;;
-esac
+echo ${G}"Downloading requirements for QEMU...."${W} ;
+wget https://github.com/AllPlatform/Termux-UbuntuX86_64/raw/master/arm64/qemu-x86_64-static;
+chmod 777 qemu-x86_64-static;
+mv qemu-x86_64-static ~/../usr/bin ;;
 
 #Links
-echo ${G}"Please put in your URL here for downloading rootfs: "${W}
-read URL
-sleep 1
-echo ${G}"Please put in your distro name in order to login after all
-If you put in 'kali' , everytime you login will be 
-'bash kali-x64.sh' "${W}
-read ds_name
-sleep 1
-echo ${Y}"your URL is $URL 
+URL="https://dl-cdn.alpinelinux.org/alpine/v3.21/releases/x86_64/alpine-minirootfs-3.21.2-x86_64.tar.gz"
+ds_name="alpine"
 and your distro name is $ds_name "${W}
 sleep 2
 
 folder=$ds_name-x64-fs
 if [ -d "$folder" ]; then
-        echo ${G}"Existing file found, are you sure to remove it? (y or n)"${W}
-        read ans
+        ans="y"
         if [[ "$ans" =~ ^([yY])$ ]]; then
                 echo ${W}"Deleting existing directory...."${W}
                 rm -rf ~/$folder
@@ -81,7 +50,7 @@ if [ -d "$folder" ]; then
         echo ${R}"Sorry, but we cannot complete the installation"
         exit
         else 
-        echo
+        echo " "
         fi
 else 
 mkdir -p $folder
